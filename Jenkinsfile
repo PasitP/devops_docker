@@ -9,6 +9,7 @@ pipeline {
        stage('Package') { 
           agent {label 'mgr1'}
           steps {
+              sh "sudo su"
               sh "docker --version"
               sh "docker build -t ${imageName} ."
             withCredentials(
